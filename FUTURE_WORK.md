@@ -2,7 +2,7 @@
 
 This file holds open ideas and deferred work items that don't belong to any single topic; agents add entries here instead of leaving TODOs scattered in code or chat. Entries carry enough context that a future agent can pick them up cold.
 
-**Template paragraph — during setup, delete this paragraph and all entries below the ruler; an empty list is fine.** The example entries below are real: they are this template's actual roadmap. If you want to know when these ship, watch the template repository (linked in your README).
+**Template paragraph — during setup, delete this paragraph and all entries below the ruler; an empty list is fine.** The example entries below are real: they are this template's actual roadmap. For progress on them, watch the template repository (linked in your README).
 
 ---
 

@@ -7,7 +7,7 @@ LLM agents forget everything between sessions. The usual fixes (chat history, ve
 - Every discussion topic gets a **LOG** file: an append-only chronological record. It may contain dead ends and corrections, and later parts may contradict earlier parts, because decisions change. Nothing is ever rewritten, so reading top-to-bottom always gives the true sequence of events.
 - Each LOG is paired with a **SUMMARY**: a short, contradiction-free statement of the current state ("we initially chose X but switched to Y, because Z"). A fresh agent reads the SUMMARY and can continue the work.
 
-The LOG is optimized for trust, the SUMMARY for fast orientation. Keeping only one of the two either loses provenance or drowns every new agent in history.
+The LOG is optimized for trust, the SUMMARY for fast orientation. With only one of the two, you either lose the reasoning behind decisions or force every new agent to read the whole history.
 
 Around that core sit a few conventions that earn the "epistemic" in the name:
 
@@ -18,7 +18,7 @@ Around that core sit a few conventions that earn the "epistemic" in the name:
 - **Team support** — each user has their own conversation folder; agents cross-read the team's summaries and flag related work. A solo project is just a team of one.
 - **Private records** (experimental) — a gitignored per-user folder with the same conventions, for content that must never reach the shared repository, with explicit rules for deriving shareable summaries from private logs.
 
-This system was built and is used daily in a private AI-alignment research project (running since January 2026, partly grant-funded); a simplified version was used by a four-person research team. It is written for [Claude Code](https://claude.com/claude-code) but contains nothing Claude-specific beyond the instruction-file name; porting to other agent harnesses is on the roadmap (see [FUTURE_WORK.md](FUTURE_WORK.md)).
+I built this for my own AI-alignment research project and have used it daily since January 2026; the research behind it is partly funded by the Foresight Institute, and a simplified version was used by the four-person mentorship team (three mentees and me) of a related research project. It is written for [Claude Code](https://claude.com/claude-code); the conventions themselves have little that is Claude-specific, and porting guides for other agent harnesses are on the roadmap (see [FUTURE_WORK.md](FUTURE_WORK.md)).
 
 ## Quickstart (humans)
 
@@ -33,7 +33,7 @@ A worked example of the conventions is in `convos/jamie/` (a fictional user with
 
 If you are an agent reading this and the repository still contains the demonstration user `convos/jamie/`, this is an unconfigured template. Your task is to adjust it to the user. Work through this checklist:
 
-1. **Interview the user.** You need: (a) the name of each team member (one name is fine — a solo project is a team of one); (b) a short description of what the project is about; (c) whether they want the private-records feature set up now (see CLAUDE.md §Privacy); (d) their answer on the git workflow, see step 5.
+1. **Interview the user.** You need: (a) the name of each team member (one name is fine); (b) a short description of what the project is about; (c) whether they want the private-records feature set up now (see CLAUDE.md §Privacy); (d) their answer on the git workflow, see step 5.
 2. **Create the user folders**: `convos/{user}/` per team member, using short lowercase slugs. For teams, record in the README how agents identify the current user (recommended: match `git config user.name` against the team list; ask when ambiguous).
 3. **Personalize the README**: replace this file's entire content with the working version in [docs/README_SKELETON.md](docs/README_SKELETON.md), filled in with the project description and team list. Keep the skeleton's link back to this template's repository (that is how future readers find the origin and how updates and the upcoming memory-harness release are announced).
 4. **Remove the demonstration content**: delete `convos/jamie/` and the template note in CLAUDE.md. In FUTURE_WORK.md, follow the setup instruction in the file itself (delete the template paragraph and example entries; an empty list is fine). In FEEDBACK.md, keep the header and delete any entries below the ruler (they belong to the template repository, not to this project).
@@ -56,7 +56,7 @@ If you are an agent reading this and the repository still contains the demonstra
 
 ## Roadmap
 
-This template is the conventions layer of a larger system. The same private project that produced it also runs a **memory harness** on top of these files: an API proxy plus tool server that gives agents a stochastic working memory over a shared store — memories that get injected, reinforced, deprecated, and audited. It is in daily dogfooding use and will be released into this repository once it is untangled and hardened for other people's machines. [FUTURE_WORK.md](FUTURE_WORK.md) has the description; watch this repository if you want the release.
+This template is the conventions layer of a larger system. The same private project that produced it also runs a **memory harness** on top of these files: an API proxy plus tool server that gives agents a stochastic working memory over a shared store — memories that get injected, reinforced, deprecated, and audited. It is in daily dogfooding use; the plan is to release it into this repository once it is untangled and hardened for other people's machines. [FUTURE_WORK.md](FUTURE_WORK.md) has the description; watch this repository if you want the release.
 
 ## License
 

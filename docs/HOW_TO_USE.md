@@ -13,11 +13,11 @@ This guide covers the daily workflow. The agent-facing rules live in [CLAUDE.md]
        C: I don't think assumption 2 holds, we dropped that API last month.
    ```
 
-4. **Next session, any agent can continue.** A fresh agent reads the SUMMARY, not your chat history. If it needs detail, it greps the LOG. You never re-explain the project.
+4. **Next session, any agent can continue.** A fresh agent reads the SUMMARY, not your chat history. If it needs detail, it greps the LOG. You stop re-explaining the project from scratch.
 
 ## Reviewing agent work
 
-Agents in this system do not commit or push unless you explicitly ask them to; that's deliberate, not a limitation. You review their changes with `git diff`, then commit what passes. This loop is the human oversight layer:
+Agents in this system do not commit or push unless you explicitly ask them to. You review their changes with `git diff`, then commit what passes. This loop is the human oversight layer:
 
 - Everything an agent wrote is visible in one place before it becomes permanent.
 - "Committed" acquires a real meaning: a human looked at this (a quick look — the system deliberately calls this *spot-checked, not verified*).
@@ -45,7 +45,7 @@ Agents tag claims in the files: `[decided]`, `[verified: ...]`, `[concluded]`, `
 
 ## Teams
 
-Each team member has their own folder under `convos/`. Agents work in the current user's folder, but they also skim the rest of the team's recent SUMMARYs and will flag related work ("Maria already analyzed this last month"). There is no merge machinery and no ownership bureaucracy: if two people's decisions conflict, that's a conversation between humans, and its outcome gets recorded like any other decision.
+Each team member has their own folder under `convos/`. Agents work in the current user's folder, but they are also instructed to skim the rest of the team's recent SUMMARYs and flag related work ("Maria already analyzed this last month"). There is no merge machinery and no ownership bureaucracy: if two people's decisions conflict, that's a conversation between humans, and its outcome gets recorded like any other decision.
 
 All team members write comments with the same `C:` prefix; whose comment it is follows from whose folder the file is in.
 
@@ -72,4 +72,4 @@ And remember that work on an unmerged branch is invisible elsewhere — agree wi
 Two habits keep the system healthy; both are one sentence to trigger:
 
 - **Sync** (`!sync` or "please sync the logs"): an agent checks that SUMMARYs reflect their LOGs, cross-references are two-way, and nothing agreed in a LOG got silently dropped. Run it when a lot has changed, or roughly monthly.
-- **Feedback review**: occasionally ask an agent to go through FEEDBACK.md and propose which recurring problems deserve a new rule. This is how the conventions improve instead of rotting.
+- **Feedback review**: occasionally ask an agent to go through FEEDBACK.md and propose which recurring problems deserve a new rule. This is the mechanism that keeps the rules improving over time.

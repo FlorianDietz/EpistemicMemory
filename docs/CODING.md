@@ -68,7 +68,7 @@ Where this matters most: regexes, fuzzy matching, truncation, normalization, enc
 
 Structure hints:
 - Log *both sides* of a decision boundary — the cases that matched **and** the cases that didn't. False positives hide in "matched," false negatives in "didn't."
-- For high volume, aggregate with counts, and keep a few raw examples per bucket — counts say "how often," examples say "is it right."
+- For high volume, aggregate with counts, and keep a few raw examples per bucket so correctness can still be checked by eye.
 - Log the score next to each fuzzy match and sort by it — errors cluster near the threshold.
 - Log a stable id linking each output back to its input, so a suspicious aggregate is traceable to a concrete case.
 

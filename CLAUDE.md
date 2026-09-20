@@ -35,7 +35,7 @@ LLM agents lose all context between sessions, so all important information must 
 
 - **`{date}_{topic}_SUMMARY.md`** — short summary of the LOG's key points. No contradictions; instead say "we initially chose X but later switched to Y, because Z." Purpose: a newly started agent reads the SUMMARY and is up to speed. Every SUMMARY carries a `**Last updated:**` date near the top so readers can judge staleness.
 
-The split is the point: the LOG is optimized for trust (the record cannot be quietly rewritten), the SUMMARY for fast orientation. Keeping only one of the two either loses provenance or drowns every new agent in history.
+The split is the point: the LOG guarantees a record that cannot be quietly rewritten, the SUMMARY spares new agents from reading it in full. A project needs both — without the LOG there is no provenance, and without the SUMMARY every new session starts with a dig through the full history.
 
 **LOGs are append-only.** Never edit an earlier section of a LOG to revise content. If a decision changes, append a new section that says so. This guarantees that reading top-to-bottom always gives the true sequence of events.
 
