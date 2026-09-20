@@ -1,0 +1,19 @@
+# Private per-user records — never committed (see CLAUDE.md §Privacy).
+# Both patterns are needed: the trailing-slash form matches the real directory,
+# the bare form matches the symlink used in the worktree setup (a symlink is not
+# a directory to git, so the first pattern alone would let it be committed).
+convos/*/private/
+convos/*/private
+
+# Working files of the error-injection review procedure (docs/procedures/code_review.md)
+scratch/
+
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+
+# OS noise
+.DS_Store
