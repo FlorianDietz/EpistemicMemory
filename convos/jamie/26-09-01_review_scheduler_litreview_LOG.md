@@ -1,6 +1,6 @@
 # Literature review: spaced-repetition scheduling for the flashcard app
 
-> **FICTIONAL DEMONSTRATION CONTENT.** Everything in this file is invented — the user "jamie", the prior projects, the papers, the results. It exists to show the conventions in action: entry headers, in-place `C:` answers, epistemic status markers, append-only corrections, and the paired SUMMARY. Delete `convos/jamie/` when setting up a real project.
+> **FICTIONAL DEMONSTRATION CONTENT.** Everything in this file is invented — the user "jamie", the prior projects, the papers, the results. It exists to show the conventions in action: entry headers, in-place `C:` answers (dated and attributed), epistemic status markers, the chat-transcription marker for ratifications, append-only corrections, and the paired SUMMARY. Delete `convos/jamie/` when setting up a real project.
 
 I want to replace the fixed review intervals in the flashcard app with a proper spaced-repetition scheduler. Please review what's out there and recommend an algorithm. Check the earlier projects first so we don't redo work.
 
@@ -23,7 +23,7 @@ Deepest look at Okafor et al., since it fits our constraints best: the update ru
 
 [concluded] Recommendation: implement the Okafor-style on-device rule with Bruckner's bounded adjustment steps, per-card-type multipliers seeded from our own forgetting-curve fits. Tanaka & Osei's approach would likely score higher but needs a cloud component.
     C: Why not just take Tanaka & Osei's numbers if they're the best? What would the cloud part actually cost us?
-    Answer: Their gains come from a server-side model retrained on streamed review events. For us that means running and paying for that service, plus every review event leaving the device. The paper's own ablation (Table 4) shows the on-device variant loses about half the gain — that remaining gain is real, but it buys us a privacy change and an ops dependency the app currently doesn't have. My read: not worth it at our scale; revisit if retention becomes the bottleneck.
+    Answer (26-09-01, Claude Opus 4.5): Their gains come from a server-side model retrained on streamed review events. For us that means running and paying for that service, plus every review event leaving the device. The paper's own ablation (Table 4) shows the on-device variant loses about half the gain — that remaining gain is real, but it buys us a privacy change and an ops dependency the app currently doesn't have. My read: not worth it at our scale; revisit if retention becomes the bottleneck.
     OUTDATED: the offline/privacy requirement stated in the next section rules the cloud direction out permanently — there is no revisit path. See the entry "*offline constraint folded in; recommendation ratified*".
 
 ---
@@ -36,4 +36,6 @@ The app has to keep working fully offline, that's a hard requirement I should ha
 
 Noted — the offline/privacy requirement rules out any cloud-dependent variant permanently, not as a tradeoff. The comparison to Tanaka & Osei in yesterday's entry stands as analysis, but its "revisit if retention becomes the bottleneck" conclusion is [superseded]: there is no revisit path while the privacy policy holds. I have placed an OUTDATED marker next to that sentence in yesterday's entry, so a reader who stops there doesn't act on it.
 
-The recommendation itself is unchanged, since it was already fully on-device. Per jamie's confirmation in chat ("yes, go with that") it is now [decided]: Okafor-style on-device updates, bounded steps per Bruckner, per-card-type multipliers seeded from our forgetting-curve fits. Implementation goes against the pluggable scheduler interface from the review-queue refactor; I'll start it as a separate topic.
+The recommendation itself is unchanged, since it was already fully on-device. Jamie confirmed in chat; transcribing verbatim so the ratification is on the record rather than resting on my paraphrase:
+    C: (transcribed from chat) yes, go with that
+With that on file it is now [decided]: Okafor-style on-device updates, bounded steps per Bruckner, per-card-type multipliers seeded from our forgetting-curve fits. Implementation goes against the pluggable scheduler interface from the review-queue refactor; I'll start it as a separate topic.
