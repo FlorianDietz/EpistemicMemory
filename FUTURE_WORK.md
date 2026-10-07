@@ -12,4 +12,4 @@ This file holds open ideas and deferred work items that don't belong to any sing
 
 - **Multi-user record merging.** Team support currently means per-user folders plus cross-reading. Merging several users' records into one shared hierarchy (one topic worked by three people without copy-paste between folders) is an open design problem.
 
-- **Harness portability.** The conventions contain nothing Claude-specific except the instruction-file name (`CLAUDE.md`), but the template is currently written and tested for Claude Code only, because the memory harness above depends on it. Porting guides for other agent harnesses are planned once that dependency is settled.
+- **Harness portability.** The conventions contain nothing Claude-specific except the instruction-file name (`CLAUDE.md`), but the full template is currently written and tested for Claude Code only, because the memory harness above depends on it. The drop-in core block (`CORE.md`) is harness-independent already. Porting guides for the full template are planned once the harness dependency is settled.
