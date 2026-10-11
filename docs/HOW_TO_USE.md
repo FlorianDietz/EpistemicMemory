@@ -67,6 +67,10 @@ ln -s /path/to/main-worktree/convos/you/private /path/to/other-worktree/convos/y
 
 And remember that work on an unmerged branch is invisible elsewhere — agree with yourself (or your team) on a merge cadence.
 
+## Text for outside readers
+
+When an agent drafts something that leaves the project (an email, a post, an application), it runs a check against a list of tells that make text read as AI-written. Many readers stop reading at the first cluster of them, and some forums reject such posts automatically. The first time this comes up, the agent will ask you for a few samples of your own writing, done without AI help, so it can draft in your voice instead of its own. Your `C:` comments count as samples too. You can decline; it then only does the checklist pass. Either way, you do the final edit yourself. Some venues require that, and readers can tell when nobody did.
+
 ## Maintenance
 
 Two habits keep the system healthy; both are one sentence to trigger:

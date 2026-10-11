@@ -12,7 +12,7 @@ Many agent memory tools let the agent write its own notes or summaries, which th
 
 Or copy [CORE.md](CORE.md) yourself to the end of your AGENTS.md, CLAUDE.md, or whatever instruction file your agent loads. It is about 1,000 tokens and covers paired LOG/SUMMARY files under `convos/`, the status markers, the rule against numbers from memory, and optional comments inside the files. Nothing else in your project changes.
 
-**Full template** (new projects using Claude Code). Everything in the core, plus a folder per team member, gitignored private records, procedures for syncing, code review and multi-agent debate, a workflow where you review agent changes in the git diff, and a setup interview the agent runs for you. See the [quickstart](#quickstart-full-template) below.
+**Full template** (new projects using Claude Code). Everything in the core, plus a folder per team member, gitignored private records, procedures for syncing, code review, multi-agent debate and checking outward text for LLM-isms, a workflow where you review agent changes in the git diff, and a setup interview the agent runs for you. See the [quickstart](#quickstart-full-template) below.
 
 ## What it looks like
 
@@ -74,7 +74,7 @@ If you are an agent reading this and the repository still contains the demonstra
 | [CLAUDE.md](CLAUDE.md) | The full template's conventions, loaded by the agent every session |
 | [docs/HOW_TO_USE.md](docs/HOW_TO_USE.md) | Human-facing guide: daily workflow, git basics, review, teams, worktrees |
 | [docs/CODING.md](docs/CODING.md) | Coding conventions for projects that include code |
-| [docs/procedures/](docs/procedures/) | On-demand procedures: sync, code review, multi-agent debate, self-containedness check |
+| [docs/procedures/](docs/procedures/) | On-demand procedures: sync, code review, multi-agent debate, self-containedness check, LLM-ism check for outward text |
 | [docs/README_SKELETON.md](docs/README_SKELETON.md) | The working README your project gets after setup |
 | [FUTURE_WORK.md](FUTURE_WORK.md) | Example TODO file — doubles as this template's real roadmap |
 | [FEEDBACK.md](FEEDBACK.md) | Where agents record workflow problems and how to prevent them |

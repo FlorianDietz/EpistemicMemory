@@ -28,6 +28,7 @@ Recurring tasks:
 | Task | Last run | Due when | Notes |
 |------|----------|----------|-------|
 | Sync (LOG/SUMMARY drift) | — | After many LOG changes, or ~monthly | `!sync`; procedure: `docs/procedures/sync.md` |
+| LLM-ism checklist refresh (delete this row if the project publishes nothing) | — | ~Monthly while you publish regularly; otherwise before any high-stakes submission | Update the checklist and Known-screening sections of `docs/procedures/outward_text.md` from full primary sources (see the file's refresh rule); bump its refresh date |
 
 One-time deadlines (delete a row when done):
 

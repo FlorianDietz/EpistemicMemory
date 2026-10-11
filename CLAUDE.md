@@ -8,6 +8,7 @@ This file is the always-loaded core of the Epistemic Memory system: a set of fil
   - `code_review.md` — code reviews, including the error-injection (seeded defects) check
   - `multi_agent_debate.md` — before starting a multi-agent debate
   - `self_contained_check.md` — before delivering an artifact others will read without your context
+  - `outward_text.md` — before finalizing any text that goes to people outside the project (LLM-ism check; on first use, asks the user for writing samples and creates `convos/{user}/voice_profile.md`)
 - **`docs/HOW_TO_USE.md`** — the human-facing guide. Read it when helping a user who is new to the system.
 
 **Always read `README.md` at the start of a session — even when the user gives you a specific task.** The README holds the conversation index and the team list; if you skip it you won't know what related prior work exists. If you are a sub-agent spawned by another agent: read what your spawning agent told you to read; if it gave no reading instructions and your task is substantive, default to reading README. When you spawn a sub-agent, decide explicitly what it should read and state it in its prompt — sub-agents receive CLAUDE.md automatically but not README.
@@ -138,7 +139,7 @@ Backlinks are two-way: agents reading either topic should discover the other.
 
 ### Self-Contained Artifacts
 
-Anything you produce that will be read without the current context — code and its comments, presentations, emails, reports — must stand on its own. Never reference a decision without carrying its substance: "we picked option B" is meaningless to a reader who doesn't know the options. State what was chosen and why, in place. Artifacts that leave the project must carry everything (an internal file reference is a dead end for outside readers). Verification sweep: `docs/procedures/self_contained_check.md`.
+Anything you produce that will be read without the current context — code and its comments, presentations, emails, reports — must stand on its own. Never reference a decision without carrying its substance: "we picked option B" is meaningless to a reader who doesn't know the options. State what was chosen and why, in place. Artifacts that leave the project must carry everything (an internal file reference is a dead end for outside readers). Verification sweep: `docs/procedures/self_contained_check.md`. Outward text (emails, posts, applications, public READMEs) also gets the LLM-ism pass in `docs/procedures/outward_text.md` before it goes out.
 
 ### Quantitative Claims and Status Claims
 
