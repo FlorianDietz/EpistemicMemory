@@ -84,6 +84,10 @@ If you are an agent reading this and the repository still contains the demonstra
 
 This template is the conventions layer of a larger system. The same private project that produced it also runs a **memory harness** on top of these files: an API proxy plus tool server that gives agents a stochastic working memory over a shared store — memories that get injected, reinforced, deprecated, and audited. It is in daily dogfooding use; the plan is to release it into this repository once it is untangled and hardened for other people's machines. [FUTURE_WORK.md](FUTURE_WORK.md) has the description; watch this repository if you want the release.
 
+## Using it?
+
+If you try this, I'd like to hear how it went and how you found the repository. Opening an issue is the easiest way, and a short note on what broke helps as much as a success story.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
