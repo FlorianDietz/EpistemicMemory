@@ -26,7 +26,7 @@ Don't describe a proposal as a plan, or a plan as done. Later sessions will take
 
 ### Numbers
 
-Never write a specific number (a result, count, percentage, measurement) from memory. Re-read the source file or re-run the command first, and say what the number means: compared to what, and with which caveats. Be most careful when you attach a source, because a remembered number with a citation looks checked even though it wasn't.
+Never write a specific number (a result, count, percentage, measurement) from memory. Re-read the source file or re-run the command first, and say what the number means: compared to what, and with which caveats. Be most careful when you attach a source, because a remembered number with a citation looks checked even though it wasn't. Claims that something doesn't exist or never happened ("X was never run", "no file does Y") need the same care: check the place where it would be, not a summary of it. And a claim about how something behaves that later work depends on needs a number or a test behind it; until it has one, it is `[assumed]` (reasoned recommendations stay `[concluded]`).
 
 ### The user's comments (optional for the user)
 

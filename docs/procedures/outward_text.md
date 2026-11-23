@@ -70,6 +70,15 @@ Voice sketch (a hint, not a substitute for reading the samples):
 - {habit} — e.g. "{short verbatim example}"
 ```
 
+## Editing the user's own draft (no added hedges)
+
+When the draft is the user's (they wrote it, or rewrote yours), fact-checking must not soften it:
+- Fix an overclaim by narrowing the claim itself ("often" → "sometimes", "proves" → "shows in one run"), never by adding a qualifier clause, disclaimer or caveat around it.
+- Add no hedges, caveats or softening the user didn't write. A claim that needs a hedge to be true is a finding to report, not an edit to make.
+- Report fact-check and citation results as a list (claim, source, verdict, proposed minimal fix) and apply only the fixes the user picks.
+- Run the check again on the version the user will actually send, not only on an earlier one.
+- The same applies to the LLM-ism sweep in the procedure below: on the user's own draft, every step reports its findings instead of editing.
+
 ## Procedure
 
 If the user has no voice profile yet, run "First use" above → draft (in the user's voice if a profile exists) → sweep against the checklist and fix clusters → add missing human markers → for public or high-stakes text (posts, applications, presentations; routine one-to-one emails may skip this), have a fresh sub-agent read it with "does any part of this read as AI-written? point at specific lines", without telling it who drafted the text → after any revision round, re-read start-to-finish for revision artifacts (checklist item 5) → final read-aloud pass → **citation gate before publishing**: a fresh sub-agent reads ONLY the final text, then looks up every cited source and checks that it exists and supports the exact claim the text attaches to it. This simulates a reader with no background and catches interpretation overreach, not just fake links; a citation being real is not the same as it saying what your sentence needs → for venues that screen with a detector (see Known screening), the detector check.

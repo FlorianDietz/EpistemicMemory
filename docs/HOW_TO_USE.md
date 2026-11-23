@@ -17,10 +17,10 @@ This guide covers the daily workflow. The agent-facing rules live in [CLAUDE.md]
 
 ## Reviewing agent work
 
-Agents in this system do not commit or push unless you explicitly ask them to. You review their changes with `git diff`, then commit what passes. This loop is the human oversight layer:
+Agents in this system may commit their own code, tests and data files, with commit messages starting with `agent:`, but they never commit the records: LOGs, SUMMARYs, DRAFTs, the README, FUTURE_WORK, FEEDBACK and the instruction files. They never push. You review the records with `git diff`, then commit what passes. (If you chose the strict variant at setup, agents commit nothing and you review everything.) This loop is the human oversight layer:
 
-- Everything an agent wrote is visible in one place before it becomes permanent.
-- "Committed" acquires a real meaning: a human looked at this (a quick look — the system deliberately calls this *spot-checked, not verified*).
+- Everything an agent wrote into the records is visible in one place before it becomes permanent. Your uncommitted diff is your reading list.
+- "Committed" acquires a real meaning: a human looked at this (a quick look — the system deliberately calls this *spot-checked, not verified*). Commits starting with `agent:` don't carry that meaning.
 - If you use the private-records feature, the diff review is also the last filter that keeps private content from reaching the shared repository.
 
 Review honestly but don't aim for line-by-line reading of everything; the epistemic markers exist precisely so that unverified content is labeled as such inside the files.
@@ -35,6 +35,8 @@ git restore <file>  # throw away changes to one file
 ```
 
 Using an IDE such as VS Code is highly recommended: They provide a GUI to inspect git changes more quickly.
+
+Don't keep the repository in an iCloud, Dropbox or similar synced folder: sync services can corrupt a git repository's internal files.
 
 ## Epistemic status markers — what they mean for you
 

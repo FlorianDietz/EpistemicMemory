@@ -2,6 +2,8 @@
 
 (This is an advanced procedure for high-stakes decisions; most projects won't need it in their first weeks. It is written for the orchestrating agent, not for human reading.)
 
+**Cost warning:** a full debate spawns many sub-agents that each read a lot of material, so it can use up a large share of a subscription plan's usage limit or a noticeable API budget. Before starting one, tell the user the planned number of debaters and rounds and get their go-ahead.
+
 Escalation ladder first: for most questions, 2–4 independent agents answering blind + comparing their answers is cheaper and often as good — debate at matched compute is not reliably better than independent takes, so the ladder is about correctness as much as cost (a full debate runs roughly 5× a direct answer). Climb to a full debate only when the independent answers materially disagree, the stakes justify it, or the task is option-GENERATION rather than answer-selection — interaction can produce options no blind entry contains, which independent takes cannot.
 
 **Setup:**
